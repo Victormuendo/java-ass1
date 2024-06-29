@@ -1,21 +1,34 @@
-     /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package javaapplication1;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
-/**
- *
- * @author students
- */
-public class JavaApplication1 {
+public class PetDisplayApp extends JFrame {
+    private JLabel petLabel;
+    private JRadioButton birdButton, catButton, dogButton, rabbitButton, pigButton;
+    private ButtonGroup petGroup;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
-}
+    public PetDisplayApp() {
+        setTitle("Pet Display Application");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        petLabel = new JLabel();
+        petLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        petLabel.setPreferredSize(new Dimension(200, 200));
+
+        birdButton = new JRadioButton("Bird");
+        catButton = new JRadioButton("Cat");
+        dogButton = new JRadioButton("Dog");
+        rabbitButton = new JRadioButton("Rabbit");
+        pigButton = new JRadioButton("Pig");
+
+        petGroup = new ButtonGroup();
+        petGroup.add(birdButton);
+        petGroup.add(catButton);
+        petGroup.add(dogButton);
+        petGroup.add(rabbitButton);
+        petGroup.add(pigButton);
+
+        birdButton.addActionListener(new ActionListener() {
+   
